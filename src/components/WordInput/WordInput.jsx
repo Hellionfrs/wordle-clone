@@ -28,6 +28,7 @@ const WordInput = ({ onSubmitWord }) => {
     const word = letters.join("");
     console.log(word)
     onSubmitWord(word);
+    setLetters(["", "", "", "", ""])
   };
 
   let summitable = letters.join("").length !== 5
