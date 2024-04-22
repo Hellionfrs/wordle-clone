@@ -1,5 +1,4 @@
 import { useRef, useState } from "react";
-import { v4 as uuid } from "uuid";
 const WordInput = ({ onSubmitWord }) => {
   const [letters, setLetters] = useState(["", "", "", "", ""]);
   const inputRefs = useRef([]);
@@ -29,14 +28,13 @@ const WordInput = ({ onSubmitWord }) => {
     console.log(word);
     onSubmitWord(word);
     setLetters(["", "", "", "", ""]);
+    inputRefs.current[0].focus()
   };
-
-
 
   let summitable = letters.join("").length !== 5;
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Guess the Word!</h1>
+    <div>
+      {/* <h1 className="text-2xl font-bold mb-4">Guess the Word!</h1> */}
       <div className="flex mb-4">
         {letters.map((letter, index) => (
           <div key={index}>
