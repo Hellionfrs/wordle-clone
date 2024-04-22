@@ -25,8 +25,8 @@ const Wordle = () => {
           {guess.split("").map((letter, i) => (
             <div
               key={uuid()}
-              className={`border border-gray-300 rounded-md p-2 mr-2 w-[4rem] h-[4rem] text-4xl text-center ${
-                currentGuessIndex - 1 === index ? "animate-letter-fade" : ""
+              className={`border border-gray-300 rounded-md p-2 mr-2 w-[4rem] h-[4rem] text-4xl text-center opacity-0 ${
+                currentGuessIndex - 1 === index ? "animate-letter-fade" : "opacity-100"
               }`}
               style={{ animationDelay: `${i * 100}ms` }}
             >
