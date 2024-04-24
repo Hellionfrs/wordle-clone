@@ -28,9 +28,15 @@ const Wordle = () => {
               const isLetterInDailyWord = dailyWord.includes(letter);
               const isLetterInTheCorrectPosition = dailyWord[i] === letter;
 
-              // console.log("isLetterInDailyWord: ", isLetterInDailyWord, "isLetterInPos: ", isLetterInTheCorrectPosition, dailyWord)
+              console.log(
+                "isLetterInDailyWord: ",
+                isLetterInDailyWord,
+                "isLetterInPos: ",
+                isLetterInTheCorrectPosition,
+                dailyWord
+              );
               let letterClassNames =
-                "border border-gray-300 rounded-md p-2 mr-2 w-[4rem] h-[4rem] text-4xl text-center opacity-0";
+                "border border-gray-300 rounded-md p-2 mr-2 w-[4rem] h-[4rem] text-4xl text-center opacity-0 text-white";
               return (
                 <div
                   key={`letter-${letter}-${i}`}
@@ -39,9 +45,12 @@ const Wordle = () => {
                     currentGuessIndex - 1 === index
                       ? "animate-letter-fade"
                       : "opacity-100",
-                    isLetterInDailyWord && "bg-yellow-300 text-yellow-700",
-                    isLetterInTheCorrectPosition &&
-                      "bg-green-200 text-green-700"
+
+                    isLetterInTheCorrectPosition
+                      ? "bg-green-400 "
+                      : isLetterInDailyWord
+                      ? "bg-yellow-400 "
+                      : "bg-gray-400 "
                   )}
                   style={{ animationDelay: `${i * 100}ms` }}
                 >
