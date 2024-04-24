@@ -1,1 +1,2 @@
-export * from "./Wordle";
+export * from "./Wordle"
+export {default} from "./Wordle";
