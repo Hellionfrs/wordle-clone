@@ -1,1 +1,1 @@
-export const dailyWord = 'TESTS'
+export const dailyWord = "TESTS";

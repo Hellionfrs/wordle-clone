@@ -28,7 +28,7 @@ const WordInput = ({ onSubmitWord }) => {
     console.log(word);
     onSubmitWord(word);
     setLetters(["", "", "", "", ""]);
-    inputRefs.current[0].focus()
+    inputRefs.current[0].focus();
   };
 
   let summitable = letters.join("").length !== 5;

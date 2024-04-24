@@ -40,7 +40,8 @@ const Wordle = () => {
                       ? "animate-letter-fade"
                       : "opacity-100",
                     isLetterInDailyWord && "bg-yellow-300 text-yellow-700",
-                    isLetterInTheCorrectPosition && "bg-green-200 text-green-700"
+                    isLetterInTheCorrectPosition &&
+                      "bg-green-200 text-green-700"
                   )}
                   style={{ animationDelay: `${i * 100}ms` }}
                 >
