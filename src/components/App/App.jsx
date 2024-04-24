@@ -1,11 +1,11 @@
-import WordleGame from "../Wordle/Wordle";
+import Wordle from "../Wordle";
 
 function App() {
   return (
-    <div className="flex justify-center w-[1440px] ">
+    <div className="flex justify-center justify-self-center ">
       <div className="m-auto ">
         <h1 className="text-3xl font-bold underline ">Wordle Clone</h1>
-        <WordleGame />
+        <Wordle />
       </div>
     </div>
   );
