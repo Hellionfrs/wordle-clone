@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+
 const WordInput = ({ onSubmitWord }) => {
   const [letters, setLetters] = useState(["", "", "", "", ""]);
   const inputRefs = useRef([]);
@@ -23,6 +24,7 @@ const WordInput = ({ onSubmitWord }) => {
       handleSubmit();
     }
   };
+
   const handleSubmit = () => {
     const word = letters.join("");
     console.log(word);
@@ -46,6 +48,7 @@ const WordInput = ({ onSubmitWord }) => {
               onKeyDown={(e) => handleKeyDown(index, e)}
               className="border border-gray-300 rounded-md p-2 mr-2 w-[4rem] h-[4rem] text-4xl text-center"
               ref={(el) => (inputRefs.current[index] = el)}
+              autoFocus= {index === 0}
             />
           </div>
         ))}
