@@ -69,9 +69,11 @@ const Wordle = () => {
         <WordInput onSubmitWord={handleSubmitWord} />
       )}
       {userWon ? (
-        <div>You won!</div>
+        <div className="mt-6 text-3xl font-bold text-green-600 animate-bounce text-center">
+          You won!
+        </div>
       ) : (
-        <div>{6 - currentGuessIndex} tries remaining</div>
+        <div className="mt-2 text-lg font-medium text-gray-600">You got {6 - currentGuessIndex} more tries</div>
       )}
     </div>
     // animate-flip-up animate-delay-[50ms]
