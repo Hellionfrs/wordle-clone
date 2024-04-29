@@ -19,8 +19,8 @@ const Wordle = () => {
   };
 
   return (
-    <div>
-      <h1 className="text-2xl font-bold mb-4">Wordle Clone</h1>
+    <div className="py-4">
+      {/* <h1 className="text-2xl font-bold mb-4">Wordle Clone</h1> */}
       {guesses.map((guess, index) => (
         <div key={guess.id} className="flex mb-4">
           {guess.content &&
