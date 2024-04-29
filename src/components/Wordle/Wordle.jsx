@@ -7,8 +7,13 @@ const Wordle = () => {
   const [guesses, setGuesses] = useState([]);
   const [currentGuessIndex, setCurrentGuessIndex] = useState(0);
   const [animateLastWord, setAnimateLastWord] = useState(false);
+  const [userWon, setUserWon] = useState(false);
 
   const handleSubmitWord = (word) => {
+    const userGuessRight = word === dailyWord;
+    if (userGuessRight) {
+      setUserWon(true);
+    }
     const newGuesses = [...guesses, { id: uuid(), content: word }];
     setGuesses(newGuesses);
     setCurrentGuessIndex(currentGuessIndex + 1);
@@ -60,7 +65,12 @@ const Wordle = () => {
             })}
         </div>
       ))}
-      {currentGuessIndex < 6 && <WordInput onSubmitWord={handleSubmitWord} />}
+      {currentGuessIndex < 6 && !userWon && (
+        <WordInput onSubmitWord={handleSubmitWord} />
+      )}
+      {userWon && (
+        <div>You won!</div>
+      )}
     </div>
     // animate-flip-up animate-delay-[50ms]
   );
