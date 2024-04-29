@@ -68,8 +68,10 @@ const Wordle = () => {
       {currentGuessIndex < 6 && !userWon && (
         <WordInput onSubmitWord={handleSubmitWord} />
       )}
-      {userWon && (
+      {userWon ? (
         <div>You won!</div>
+      ) : (
+        <div>{6 - currentGuessIndex} tries remaining</div>
       )}
     </div>
     // animate-flip-up animate-delay-[50ms]
