@@ -22,7 +22,7 @@ const Wordle = () => {
       setAnimateLastWord(true);
     }
   };
-
+  let triesRemaining = 6 - currentGuessIndex;
   return (
     <div className="py-4">
       {/* <h1 className="text-2xl font-bold mb-4">Wordle Clone</h1> */}
@@ -72,8 +72,14 @@ const Wordle = () => {
         <div className="mt-6 text-3xl font-bold text-green-600 animate-bounce text-center">
           You won!
         </div>
+      ) : triesRemaining === 0 ? (
+        <div className="mt-6 text-3xl font-bold text-red-600 animate-bounce text-center">
+          You lose!
+        </div>
       ) : (
-        <div className="mt-2 text-lg font-medium text-gray-600">You got {6 - currentGuessIndex} more tries</div>
+        <div className="mt-2 text-lg font-medium text-gray-600">
+          You got {triesRemaining} more tries
+        </div>
       )}
     </div>
     // animate-flip-up animate-delay-[50ms]
