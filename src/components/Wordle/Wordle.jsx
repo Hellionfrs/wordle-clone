@@ -3,11 +3,13 @@ import WordInput from "../WordInput/WordInput";
 import clsx from "clsx";
 import { v4 as uuid } from "uuid";
 import { dailyWord } from "../../constant";
+import TriesComp from "../TriesComp";
 const Wordle = () => {
   const [guesses, setGuesses] = useState([]);
   const [currentGuessIndex, setCurrentGuessIndex] = useState(0);
   const [animateLastWord, setAnimateLastWord] = useState(false);
   const [userWon, setUserWon] = useState(false);
+  const [triesRemaining, setTriesRemaining] = useState(6);
 
   const handleSubmitWord = (word) => {
     const userGuessRight = word === dailyWord;
@@ -17,12 +19,12 @@ const Wordle = () => {
     const newGuesses = [...guesses, { id: uuid(), content: word }];
     setGuesses(newGuesses);
     setCurrentGuessIndex(currentGuessIndex + 1);
+    setTriesRemaining(6 - (currentGuessIndex + 1));
     if (currentGuessIndex === guesses.length - 1) {
       // Última respuesta
       setAnimateLastWord(true);
     }
   };
-  let triesRemaining = 6 - currentGuessIndex;
   return (
     <div className="py-4">
       {/* <h1 className="text-2xl font-bold mb-4">Wordle Clone</h1> */}
@@ -77,9 +79,9 @@ const Wordle = () => {
           You lose!
         </div>
       ) : (
-        <div className="mt-2 text-lg font-medium text-gray-600">
-          You got {triesRemaining} more tries
-        </div>
+        <span className="mt-2 text-lg font-medium text-gray-600a">
+          You got <TriesComp triesRemaining={triesRemaining} /> more tries
+        </span>
       )}
     </div>
     // animate-flip-up animate-delay-[50ms]
