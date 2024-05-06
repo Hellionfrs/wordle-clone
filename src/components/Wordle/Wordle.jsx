@@ -71,11 +71,11 @@ const Wordle = () => {
         <WordInput onSubmitWord={handleSubmitWord} />
       )}
       {userWon ? (
-        <div className="mt-6 text-3xl font-bold text-green-600 animate-bounce text-center">
+        <div className="opacity-0 mt-6 text-3xl font-bold text-green-600 text-center animate-show-up transition-all">
           You won!
         </div>
       ) : triesRemaining === 0 ? (
-        <div className="mt-6 text-3xl font-bold text-red-600 animate-bounce text-center">
+        <div className="opacity-0 mt-6 text-3xl font-bold text-red-600 text-center animate-show-up transition-all">
           You lose!
         </div>
       ) : (
