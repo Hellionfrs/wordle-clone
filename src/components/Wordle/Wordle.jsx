@@ -79,9 +79,11 @@ const Wordle = () => {
           You lose!
         </div>
       ) : (
-        <span className="mt-2 text-lg font-medium text-gray-600a">
-          You got <TriesComp triesRemaining={triesRemaining} /> more tries
-        </span>
+        <div className="flex gap-2 mt-2 text-lg font-medium text-gray-600">
+          <span>You got </span>
+          <TriesComp triesRemaining={triesRemaining} />
+          <span> more tries</span>
+        </div>
       )}
     </div>
     // animate-flip-up animate-delay-[50ms]

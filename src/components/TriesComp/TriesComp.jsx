@@ -11,13 +11,13 @@ export default function TriesComp({ triesRemaining }) {
     // Desactivar la animación después de un corto período para permitir la reproducción
     const timeout = setTimeout(() => {
       setAnimate(false);
-    }, 500); // Duración de la animación (0.5 segundos)
+    }, 1000); // Duración de la animación (0.5 segundos)
 
     return () => clearTimeout(timeout);
   }, [triesRemaining]);
   return (
-    <span className={clsx(animate ? "animate-letter-fade" : "")}>
+    <div className={clsx("text-green-400",animate ? "animate-number-elevator" : "")}>
       {triesRemaining}
-    </span>
+    </div>
   );
 }
