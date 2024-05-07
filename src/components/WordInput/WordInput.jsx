@@ -5,9 +5,10 @@ const WordInput = ({ onSubmitWord }) => {
   const inputRefs = useRef([]);
 
   const handleInputChange = (index, e) => {
+    let { value } = e.target;
+    value = value.toUpperCase().replace(/[^A-Z]/g, "");
     const newLetters = [...letters];
-    const { value } = e.target;
-    newLetters[index] = value.toUpperCase();
+    newLetters[index] = value.slice(0, 1);
     setLetters(newLetters);
 
     if (value !== "" && index < inputRefs.current.length - 1) {
