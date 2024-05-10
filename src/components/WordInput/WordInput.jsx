@@ -38,7 +38,7 @@ const WordInput = ({ onSubmitWord }) => {
   return (
     <div>
       {/* <h1 className="text-2xl font-bold mb-4">Guess the Word!</h1> */}
-      <div className="flex mb-4">
+      <div className="flex">
         {letters.map((letter, index) => (
           <div key={index}>
             <input
@@ -56,7 +56,7 @@ const WordInput = ({ onSubmitWord }) => {
       </div>
       <button
         onClick={handleSubmit}
-        className="bg-blue-500 enabled:hover:bg-blue-700 text-white font-bold py-2 px-4 rounded disabled:opacity-50 "
+        className="bg-blue-500 enabled:hover:bg-blue-700 text-white font-bold py-2 px-4 rounded disabled:opacity-50 hidden"
         disabled={summitable}
       >
         Submit
