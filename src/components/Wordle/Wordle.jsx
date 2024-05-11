@@ -36,7 +36,7 @@ const Wordle = () => {
   };
 
   return (
-    <div className="flex flex-col gap-2 p-4 pb-8 border border-gray-200 border-spacing-4 rounded-xl shadow-md">
+    <div className="flex flex-col gap-2 p-4 pb-8 border border-gray-100 border-spacing-4 rounded-xl shadow-md">
       {/* <h1 className="text-2xl font-bold mb-4">Wordle Clone</h1> */}
       {guesses.map((guess, index) => (
         <div key={guess.id} className="flex">
