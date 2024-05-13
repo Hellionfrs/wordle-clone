@@ -37,7 +37,6 @@ const WordInput = ({ onSubmitWord }) => {
   let summitable = letters.join("").length !== 5;
   return (
     <div>
-      {/* <h1 className="text-2xl font-bold mb-4">Guess the Word!</h1> */}
       <div className="flex">
         {letters.map((letter, index) => (
           <div key={index}>

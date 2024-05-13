@@ -32,12 +32,10 @@ const Wordle = () => {
       // Última respuesta
       setAnimateLastWord(true);
     }
-    console.log(guesses);
   };
 
   return (
     <div className="flex flex-col gap-2 p-4 pb-8 border border-gray-100 border-spacing-4 rounded-xl shadow-md">
-      {/* <h1 className="text-2xl font-bold mb-4">Wordle Clone</h1> */}
       {guesses.map((guess, index) => (
         <div key={guess.id} className="flex">
           {index === currentGuessIndex
@@ -46,14 +44,6 @@ const Wordle = () => {
             : guess.content.map((letter, i) => {
                 const isLetterInDailyWord = dailyWord.includes(letter);
                 const isLetterInTheCorrectPosition = dailyWord[i] === letter;
-
-                // console.log(
-                //   "isLetterInDailyWord: ",
-                //   isLetterInDailyWord,
-                //   "isLetterInPos: ",
-                //   isLetterInTheCorrectPosition,
-                //   dailyWord
-                // );
                 let letterClassNames =
                   "border border-gray-300 rounded-md p-2 mr-2 w-[4rem] h-[4rem] text-4xl text-center opacity-0 text-white";
                 return (
@@ -79,9 +69,7 @@ const Wordle = () => {
               })}
         </div>
       ))}
-      {/* {currentGuessIndex < 6 && !userWon && ( 
-       <WordInput onSubmitWord={handleSubmitWord} />
-      )} */}
+
       {userWon ? (
         <div className="opacity-0 text-3xl font-bold text-green-600 text-center animate-show-up transition-all">
           You won!
@@ -98,7 +86,6 @@ const Wordle = () => {
         </div>
       )}
     </div>
-    // animate-flip-up animate-delay-[50ms]
   );
 };
 
